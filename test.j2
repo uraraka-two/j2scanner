@@ -1,0 +1,10 @@
+<match {{ item.topic }}>
+  @type kafka2
+  brokers {{ brokers | join(",") }}
+{% if ssl %}
+  ssl_client_cert {{ ssl_client_cert }}
+{% endif %}
+{% raw %}
+This block contains {{ literally }} and should NOT be encoded.
+{% endraw %}
+</match>
